@@ -7,7 +7,7 @@ import { Switch, Route } from 'react-router-dom';
 
 
 class App extends React.Component {
-  
+
   constructor(props) {
     super(props);
     this.state = {
@@ -15,7 +15,7 @@ class App extends React.Component {
     };
     this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
   }
-  
+
   handleAddingNewTicketToList(newTicket){
     var newMasterTicketList = this.state.masterTicketList.slice();
     newMasterTicketList.push(newTicket);
@@ -25,11 +25,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header/>
+        <Header />
         <Switch>
-          <Route exact path='/' render={()=><TicketList ticketList={this.state.masterTicketList} />} />
-          <Route path='/newticket' render={()=><NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList} />} />
-          <Route component={Error404} />
+          <Route exact path = '/' render = {()=><TicketList ticketList = {this.state.masterTicketList} />} />
+          <Route path = '/newticket' render = {()=><NewTicketControl onNewTicketCreation = {this.handleAddingNewTicketToList} />} />
+          <Route component = {Error404} />
         </Switch>
       </div>
     );
